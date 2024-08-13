@@ -3,9 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo Logging in to DockerHub...
-      - docker login -u $dockerhub_username -p $dockerhub_password
-      - REPOSITORY_URI=$ecr_uri
+      - REPOSITORY_URI=647495571141.dkr.ecr.us-east-1.amazonaws.com/web
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
