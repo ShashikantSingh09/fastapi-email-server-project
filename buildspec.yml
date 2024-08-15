@@ -3,7 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - REPOSITORY_URI=647495571141.dkr.ecr.us-east-1.amazonaws.com/web
+      - 654654357080.dkr.ecr.us-east-1.amazonaws.com/web
   build:
     commands:
       - echo Build started on `date`
@@ -14,7 +14,7 @@ phases:
       - echo Build completed on `date`
       - echo Logging in to Amazon ECR...
       - aws --version
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 647495571141.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 654654357080.dkr.ecr.us-east-1.amazonaws.com
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
       - echo Writing image definitions file...
